@@ -28,7 +28,7 @@ const PropertyList: React.FC = () => {
 
   const fetchProperties = () => {
     axios
-      .get<ApiResponse>('http://localhost:5000/api/properties/search', {
+      .get<ApiResponse>(`${import.meta.env.VITE_API_URL}/api/properties/search`, {
         params: {
           city: filters.city || undefined,
           minPrice: filters.minPrice || undefined,
